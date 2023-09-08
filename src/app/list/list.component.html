@@ -1,0 +1,36 @@
+<div class="row">
+    <h2>Lista de Estudiantes</h2>
+</div>
+
+<button (click)="createEstudiante()" class="btn btn-success">Create</button>
+
+<div class="table-responsive">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Altura</th>
+                <th scope="col">birthday</th>
+                <th scope="col">positions</th>
+                <th scope="col">state</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let est of estudiante">
+                <td>{{est.name}}</td>
+                <td>{{est.email}}</td>
+                <td>{{est.altura}}</td>
+                <td>{{est.birthday}}</td>
+                <td>{{est.positions}}</td>
+                <td>{{est.state}}</td>
+                <td>
+                    <button (click)="updateEstudiante(est.id)">Update</button>
+                    <button (click)="deleteEstudiante(est.id)" style="margin-left: 10px;">Delete</button>
+                    <button (click)="getEstudiante(est.id)" style="margin-left: 10px;">Show</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
